@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="masterpageStyles.css" />
+  </head>
+  <body>
+    <div class="totalbanknote">
+      <p class="totalbanknote__text">Total <span class="colon">: </span></p>
+      <p class="totalbanknote__balance"></p>
+    </div>
+
+    <form class="addpiggybank__button">
+      <input type="image" src="./assets/images/master-page/addbutton.png" />
+    </form>
+
+    <form class="transfer__button">
+      <input
+        type="image"
+        src="./assets/images/master-page/transferbutton.png"
+      />
+    </form>
+
+    <article class="piggybanks"></article>
+
+    <div class="addpiggybank__popupform">
+      <form class="addpiggybank__popupform--form">
+        <input
+          type="text"
+          class="addpiggybank__popupform--name"
+          placeholder="Name..."
+          autofocus
+        />
+        <input
+          type="number"
+          class="addpiggybank__popupform--balance"
+          step="any"
+          placeholder="Balance..."
+          value="0"
+        />
+        <input
+          type="submit"
+          class="addpiggybank__popupform--submit"
+          value="Make piggy bank"
+        />
+      </form>
+    </div>
+
+    <div class="transfer__popupform">
+      <form class="transfer__popupform--form">
+        <select class="transfer__popupform--sender" autofocus> </select>
+        <select class="transfer__popupform--receiver" autofocus> </select>
+        <input
+          type="number"
+          class="transfer__popupform--amount"
+          step="any"
+          placeholder="Amount..."
+          value="0"
+        />
+        <input
+          type="text"
+          class="transfer__popupform--message"
+          placeholder="Message..."
+          value="Transfer"
+        />
+        <input
+          type="submit"
+          class="transfer__popupform--submit"
+          value="Transfer"
+        />
+      </form>
+    </div>
+
+    <div class="deposit__popupform">
+      <form class="deposit__popupform--form">
+        <input type="hidden" class="deposit__popupform--receiverId" />
+        <input
+          type="number"
+          class="deposit__popupform--amount"
+          placeholder="Amount..."
+          step="any"
+          value="0"
+        />
+        <input
+          type="text"
+          class="deposit__popupform--message"
+          placeholder="Message..."
+          value="Deposit"
+        />
+        <input
+          type="submit"
+          class="deposit__popupform--submit"
+          value="Deposit"
+        />
+      </form>
+    </div>
+
+    <div class="withdraw__popupform">
+      <form class="withdraw__popupform--form">
+        <input type="hidden" class="withdraw__popupform--senderId" />
+        <input
+          type="number"
+          class="withdraw__popupform--amount"
+          placeholder="Amount..."
+          step="any"
+          value="0"
+        />
+        <input
+          type="text"
+          class="withdraw__popupform--message"
+          placeholder="Message..."
+          value="Withdrawal"
+        />
+        <input
+          type="submit"
+          class="withdraw__popupform--submit"
+          value="Withdraw"
+        />
+      </form>
+    </div>
+
+    <script src="masterpageScript.js"></script>
+  </body>
+</html>

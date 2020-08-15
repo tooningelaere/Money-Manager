@@ -1,0 +1,24 @@
+{
+  "name": "money-manager",
+  "version": "1.0.0",
+  "description": "money manager desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "Toon Ingelaere",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.2.0",
+    "electron-store": "^6.0.0",
+    "moment": "^2.27.0",
+    "node-gyp": "^7.0.0",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.8.0",
+    "electron-packager": "^15.0.0",
+    "electron-rebuild": "^1.11.0"
+  }
+}

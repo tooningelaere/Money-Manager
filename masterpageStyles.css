@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Blackhawk";
+  src: url("./assets/fonts/Blackhawk-3R58.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background: url("./assets/images/master-page/background.png") no-repeat center
+    center fixed;
+
+  background-size: cover;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 35rem 1fr max-content max-content;
+  grid-template-rows: max-content 26rem max-content;
+  column-gap: 0.2rem;
+}
+
+.totalbanknote {
+  color: #30ad66;
+  width: 35rem;
+  background-color: #adffc0;
+  padding: 1.5rem;
+  border: 1rem solid #30ad66;
+  font-family: "Blackhawk", sans-serif;
+  font-size: 7rem;
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.totalbanknote__text {
+  display: flex;
+  flex-flow: row;
+}
+
+.colon {
+  font-size: 5rem;
+  align-self: flex-end;
+}
+
+.transfer__button {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.addpiggybank__button {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.piggybanks {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  grid-row: 3;
+  grid-column: span 4;
+  overflow-x: hidden;
+}
+
+.piggybank {
+  display: grid;
+  grid-template-rows: 24.5rem 5.5rem max-content;
+  justify-items: center;
+  align-items: flex-start;
+  margin: 0rem 3rem;
+}
+
+.piggybank__bank {
+  width: 20rem;
+  height: 30rem;
+  display: grid;
+  grid-template-rows: 0rem 11rem 5rem 8rem 6rem;
+  grid-template-columns: 6rem 8rem 6rem;
+  justify-items: center;
+}
+
+.piggybank__bank--image {
+  grid-column: span 3;
+  cursor: default;
+}
+
+.piggybank__bank--depositbutton {
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: center;
+  margin-top: 0.2rem;
+}
+
+.piggybank__bank--withdrawbutton {
+  grid-row: 3;
+  grid-column: 3;
+  justify-self: center;
+  margin-top: 0.2rem;
+}
+
+.piggybank__bank--name {
+  font-family: Blackhawk, sans-serif;
+  font-size: 6rem;
+  color: #212121;
+  grid-row: 4;
+  grid-column: span 3;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.piggybank__bank--removebutton {
+  grid-row: 5;
+  grid-column: 3;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.piggybank__transactions--container {
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.piggybank__transactions {
+  color: #212121;
+  background-color: #f7fcdc;
+  line-height: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 14rem;
+  transform: translateY(-15rem);
+  transition: all 0.5s ease-in-out;
+  pointer-events: auto;
+}
+
+.piggybank__transactions--transaction {
+  display: flex;
+  flex-flow: column;
+  padding: 0.2rem 0.5rem;
+}
+
+.piggybank__transactions--transaction:nth-child(odd) {
+  background-color: #f4f3ad;
+}
+
+.piggybank__transactions--transaction__extra {
+  align-self: flex-end;
+  justify-self: flex-end;
+  text-align: end;
+  text-justify: end;
+  font-weight: normal;
+}
+
+.piggybank__balance {
+  color: #30ad66;
+  width: 10rem;
+  background-color: #adffc0;
+  padding: 1.2rem 2rem;
+  margin: 1rem;
+  border: 0.5rem solid #30ad66;
+  font-family: "Blackhawk", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.addpiggybank__popupform {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.addpiggybank__popupform--form {
+  background-color: #186baf;
+  margin: auto;
+  padding: 1.5rem;
+  border: 0.5rem solid #cfd0d6;
+  width: 25rem;
+  border-radius: 2rem;
+}
+
+.transfer__popupform {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.transfer__popupform--form {
+  background-color: #186baf;
+  margin: auto;
+  padding: 1.5rem;
+  border: 0.5rem solid #cfd0d6;
+  width: 25rem;
+  border-radius: 2rem;
+}
+
+.deposit__popupform {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.deposit__popupform--form {
+  background-color: #186baf;
+  margin: auto;
+  padding: 1.5rem;
+  border: 0.5rem solid #cfd0d6;
+  width: 25rem;
+  border-radius: 2rem;
+}
+
+.withdraw__popupform {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.withdraw__popupform--form {
+  background-color: #186baf;
+  margin: auto;
+  padding: 1.5rem;
+  border: 0.5rem solid #cfd0d6;
+  width: 25rem;
+  border-radius: 2rem;
+}
+
+input {
+  margin: 0.3rem;
+}

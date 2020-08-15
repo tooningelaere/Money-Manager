@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="detailpageStyles.css" />
+  </head>
+  <body>
+    <div class="balance"></div>
+
+    <div class="piggybank">
+      <img
+        src="assets/images/detail-page/piggybank.png"
+        width="800px"
+        class="piggybank__bank"
+      />
+      <ul class="piggybank__transactions"></ul>
+    </div>
+
+    <div class="extrainfo__container"></div>
+
+    <form class="changename__button">
+      <input type="image" src="./assets/images/detail-page/renamebutton.png" />
+    </form>
+
+    <form class="filter__button">
+      <input type="image" src="./assets/images/detail-page/filterbutton.png" />
+    </form>
+
+    <a href="masterWindow.html" class="return__button">
+      <input type="image" src="./assets/images/detail-page/returnbutton.png" />
+    </a>
+
+    <div class="changename__popupform">
+      <form class="changename__popupform--form">
+        <input
+          type="text"
+          class="changename__popupform--name"
+          placeholder="New name..."
+          autofocus
+        />
+        <input
+          type="submit"
+          class="changename__popupform--submit"
+          value="Rename piggy bank"
+        />
+      </form>
+    </div>
+
+    <script src="detailpageScript.js"></script>
+  </body>
+</html>
